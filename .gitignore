@@ -7,6 +7,10 @@
 # Virtual environment
 venv/
 
+# Dependencies
+node_modules/
+dist/
+
 # OS files
 .DS_Store
 
