@@ -1,0 +1,14 @@
+# Temp files
+~$*
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+
+# OS files
+.DS_Store
+
+# Data files (optional, but recommended if they are large)
+*.xlsx
