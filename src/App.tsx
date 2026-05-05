@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { createClient } from '@supabase/supabase-js'
-import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useParams, useLocation } from 'react-router-dom'
 import './styles.css'
+import ResearchProjects from './ResearchProjects'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
@@ -139,6 +140,10 @@ function App() {
           </div>
 
           <div className="right-group">
+            <nav style={{ display: 'flex', gap: '1rem', marginRight: '1rem' }}>
+              <Link to="/" className="nav-link" style={{ textDecoration: 'none', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.9rem' }}>Dashboard</Link>
+              <Link to="/research" className="nav-link" style={{ textDecoration: 'none', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.9rem' }}>Research Ideas</Link>
+            </nav>
             <div className="search-container">
               <input 
                 type="text" 
@@ -177,6 +182,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard selectedReprors={selectedReprors} />} />
             <Route path="/stock/:stockCode" element={<StockDetail selectedReprors={selectedReprors} />} />
+            <Route path="/research" element={<ResearchProjects />} />
           </Routes>
         </main>
       </div>
